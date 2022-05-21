@@ -12,41 +12,49 @@ let availableQuestions = []
 
 let questions = [
     {
-        question: 'What is 2+2?',
-        choice1: '2',
-        choice2: '4',
-        choice3: '21',
-        choice4: '17',
+        question: 'Commonly used data types DO Not Include?',
+        choice1: 'strings',
+        choice2: 'booleans',
+        choice3: 'alerts',
+        choice4: 'numbers',
         answer: 2,
     },
     {
-        question: 'The tallest building in the world is located in which city?',
-        choice1: 'Dubai',
-        choice2: 'New York',
-        choice3: 'Shanghai',
-        choice4: 'None of the above',
-        answer: 1,
-    },
-    {
-        question: 'What percent of American adults believe that chocolate milk comes from cows?',
-        choice1: '20%',
-        choice2: '18%',
-        choice3: '7%',
-        choice4: '33%',
+        question: 'The condition in an if / else statement is enclosed with _______.',
+        choice1: 'quotes',
+        choice2: 'curly brackets',
+        choice3: 'parenthesis',
+        choice4: 'square brackets',
         answer: 3,
     },
     {
-        question: 'Approx what percent of U.S. power outages are caused by squirrels?',
-        choice1: '10-20%',
-        choice2: '5-10%',
-        choice3: '15-20%',
-        choice4: '30%-40%',
-        answer: 1,
+        question: 'Arrays in JavaScript can be used to store _______.?',
+        choice1: 'numbers and strings',
+        choice2: 'other arrays',
+        choice3: 'booleans',
+        choice4: 'all of the above',
+        answer: 4,
+    },
+    {
+        question: 'String values must be enclosed within _______ when being assigned to variables.',
+        choice1: 'commas',
+        choice2: 'curly brackets',
+        choice3: 'quotes',
+        choice4: 'parenthesis',
+        answer: 2,
+    },
+    {
+        question: 'A very useful tool used during development and debugging for printing content to the debugger is:',
+        choice1: 'JavaScript',
+        choice2: 'terminal/bash',
+        choice3: 'for loops',
+        choice4: 'console.log',
+        answer: 3,
     }
 ]
 
 const SCORE_POINTS = 100
-const MAX_QUESTIONS = 4
+const MAX_QUESTIONS = 5
 
 startGame = () => {
     questionCounter = 0
@@ -54,6 +62,11 @@ startGame = () => {
     availableQuestions = [...questions]
     getNewQuestions()
 }
+// GAMER TIMER
+setTimeout(() => {
+    console.log("Delayed for 5 second.");
+    return window.location.assign('./end.html');
+  }, "5000")
 
 getNewQuestions = () => {
     if(availableQuestions.length === 0 || questionCounter > MAX_QUESTIONS) {
@@ -64,7 +77,7 @@ getNewQuestions = () => {
     
     questionCounter++
     progressText.innerText = `Question ${questionCounter} of ${MAX_QUESTIONS}`
-    progressBarFull.style.width = `${(questionCounter/MAX_QUESTIONS) * 100}%`
+    progressBarFull.style.width = `${(questionCounter/MAX_QUESTIONS) * 95}%`
 
     const questionsIndex = Math.floor(Math.random() * availableQuestions.length)
     currentQuestion = availableQuestions[questionsIndex]

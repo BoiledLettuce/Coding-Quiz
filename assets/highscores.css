@@ -1,5 +1,5 @@
 body {
-    color: #fff;
+    color: rgb(0, 0, 0);
 
 }
 
@@ -9,6 +9,6 @@ body {
 }
 
 .high-score {
-    font-size: 2.8rem;
+    font-size: 5rem;
     margin-bottom: 0.5rem;
 }
