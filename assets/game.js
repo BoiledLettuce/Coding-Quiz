@@ -62,18 +62,46 @@ startGame = () => {
     availableQuestions = [...questions]
     getNewQuestions()
 }
-// GAMER TIMER
+// START GAMER TIMER
 setTimeout(() => {
-    console.log("Delayed for 5 second.");
+    console.log("Delayed for 60 second.");
     return window.location.assign('./end.html');
-  }, "5000")
+  }, "60000")
+// GAMER TIMER 2
+function startTimer(duration, display) {
+    var timer = duration, minutes, seconds;
+    setInterval(function () {
+        minutes = parseInt(timer / 60, 10);
+        seconds = parseInt(timer % 60, 10);
+
+        minutes = minutes < 10 ? "0" + minutes : minutes;
+        seconds = seconds < 10 ? "0" + seconds : seconds;
+
+        display.textContent = minutes + ":" + seconds;
+
+        if (--timer < 0) {
+            timer = duration;
+            console.log("QUIZ HAS CONCLUDED");
+            localStorage.setItem('mostRecentScore', score);
+            getNewQuestions();
+        }
+    }, 1000);
+}
+
+window.onload = function () {
+    var fiveMinutes = 60 * 1,  //60 times X = seconds
+        display = document.querySelector('#time');
+    startTimer(fiveMinutes, display);
+};
+
+//END GAMER TIMER
 
 getNewQuestions = () => {
     if(availableQuestions.length === 0 || questionCounter > MAX_QUESTIONS) {
         localStorage.setItem('mostRecentScore', score)
 
         return window.location.assign('./end.html')
-    }
+    } 
     
     questionCounter++
     progressText.innerText = `Question ${questionCounter} of ${MAX_QUESTIONS}`
