@@ -2,9 +2,9 @@
 
 ## Overview
 
-This password generator was created using Javascript with prompts and selecting random strings in an array.
+A Coding Quiz to test both new and experienced programmers. 
 
-**Note:** Coding Quiz is a work in progress.
+**Note:** More questions will be added to this quiz.
 
 
 ## Preview
@@ -13,7 +13,7 @@ Preview of website:
 
 ![Quiz demo](./assets/Preview.JPG)
 
-**Link:** https://boiledlettuce.github.io/Password_Generator/
+**Link:** https://boiledlettuce.github.io/Coding-Quiz/
 
 - - -
 © Joshua Henson
